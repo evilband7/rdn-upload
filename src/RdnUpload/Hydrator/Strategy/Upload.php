@@ -37,33 +37,50 @@ class Upload implements StrategyInterface
 
 	public function hydrate($data)
 	{
-		if ($data['error'] === UPLOAD_ERR_OK)
-		{
-			$input = new File\Input($data);
-			if ($this->preUpload)
-			{
-				$input = call_user_func($this->preUpload, $input);
-			}
-
-			$newValue = $this->container->upload($input);
-
-			if ($this->value && $this->container->has($this->value))
-			{
-				try
-				{
-					$this->container->delete($this->value);
-				}
-				catch (\Exception $ex)
-				{
-					$this->container->delete($newValue);
-					throw $ex;
-				}
-			}
-
-			$this->value = $newValue;
-			return $this->value;
-		}
-
-		return $this->value;
+	    if(isset($data[0])){
+	        $this->value = array();
+	        $arrayData = $data;
+	        foreach ($arrayData as $data){
+	            if ($data['error'] === UPLOAD_ERR_OK)
+	            {
+	                $input = new File\Input($data);
+	                if ($this->preUpload)
+	                {
+	                    $input = call_user_func($this->preUpload, $input);
+	                }
+	                 
+	                $newValue = $this->container->upload($input);
+	                array_push($this->value, $newValue);
+	            }
+	        }
+	    }else{
+	        if ($data['error'] === UPLOAD_ERR_OK)
+	        {
+	            $input = new File\Input($data);
+	            if ($this->preUpload)
+	            {
+	                $input = call_user_func($this->preUpload, $input);
+	            }
+	        
+	            $newValue = $this->container->upload($input);
+	        
+	            if ($this->value && $this->container->has($this->value))
+	            {
+	                try
+	                {
+	                    $this->container->delete($this->value);
+	                }
+	                catch (\Exception $ex)
+	                {
+	                    $this->container->delete($newValue);
+	                    throw $ex;
+	                }
+	            }
+	        
+	            $this->value = $newValue;
+	            return $this->value;
+	        }
+	        return $this->value;
+	    }
 	}
 }

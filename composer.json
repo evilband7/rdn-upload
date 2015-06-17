@@ -1,30 +1,29 @@
 {
-	"name": "radnan/rdn-upload",
-	"description": "Zend Framework 2 module to manage file uploads easily and securely",
-	"keywords": ["zf2", "zend", "file", "upload", "cloud"],
-	"license": "MIT",
-	"authors": [
-		{
-			"name": "radnan",
-			"email": "rafiadnan47@gmail.com"
-		}
-	],
-	"require-dev": {
-		"knplabs/gaufrette": "*",
-		"mikey179/vfsStream": "*",
-		"phpunit/phpunit": "3.*",
-		"zendframework/zend-http": "2.*",
-		"zendframework/zend-mvc": "2.*",
-		"zendframework/zend-servicemanager": "2.*",
-		"zendframework/zend-stdlib": "2.*",
-		"zendframework/zend-view": "2.*"
-	},
-	"suggests": {
-		"knplabs/gaufrette": "Provides a lot more adapters"
-	},
-	"autoload": {
-		"psr-0": {
-			"RdnUpload\\": "src/"
-		}
-	}
+  "name" : "evilband7/rdn-upload",
+  "description" : "Zend Framework 2 module to manage file uploads easily and securely",
+  "version" : "1.0.0",
+  "require-dev" : {
+    "knplabs/gaufrette" : "*",
+    "mikey179/vfsStream" : "*",
+    "phpunit/phpunit" : "3.*",
+    "zendframework/zend-http" : "2.*",
+    "zendframework/zend-mvc" : "2.*",
+    "zendframework/zend-servicemanager" : "2.*",
+    "zendframework/zend-stdlib" : "2.*",
+    "zendframework/zend-view" : "2.*"
+  },
+  "license" : "MIT",
+  "suggests" : {
+    "knplabs/gaufrette" : "Provides a lot more adapters"
+  },
+  "keywords" : [ "zf2", "zend", "file", "upload", "cloud" ],
+  "autoload" : {
+    "psr-0" : {
+      "RdnUpload\\" : "src/"
+    }
+  },
+  "authors" : [ {
+    "name" : "radnan",
+    "email" : "rafiadnan47@gmail.com"
+  } ]
 }
