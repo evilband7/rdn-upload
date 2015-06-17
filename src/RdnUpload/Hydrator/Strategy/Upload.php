@@ -80,7 +80,7 @@ class Upload implements StrategyInterface
 	            $this->value = $newValue;
 	            return $this->value;
 	        }
-	        return $this->value;
 	    }
+	    return $this->value;
 	}
 }

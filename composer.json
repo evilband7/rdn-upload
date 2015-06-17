@@ -1,7 +1,7 @@
 {
   "name" : "evilband7/rdn-upload",
   "description" : "Zend Framework 2 module to manage file uploads easily and securely",
-  "version" : "1.0.0",
+  "version" : "1.0.1",
   "require-dev" : {
     "knplabs/gaufrette" : "*",
     "mikey179/vfsStream" : "*",
